@@ -1,0 +1,19 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "nuxt": "^3.4.3",
+    "sass": "^1.62.1",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-icons": "^0.16.1",
+    "unplugin-vue-components": "^0.24.1"
+  }
+}
