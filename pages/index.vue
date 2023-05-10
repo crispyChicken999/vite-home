@@ -39,7 +39,8 @@ useHead({
     },
   ],
 });
-const baseURL = "https://crispyChicken.github.io";
+const baseURL = "https://crispyChicken999.github.io";
+
 // 跳转至项目
 const goToProject = (name) => {
   if (!name) return;
