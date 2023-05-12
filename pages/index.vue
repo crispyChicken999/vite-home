@@ -60,32 +60,31 @@ const goToProject = (name) => {
     flex-direction: column;
     justify-content: center;
     animation: gradient 5s ease infinite;
-    background: linear-gradient(to right, #17ead845, #6077ea45);
+    background: linear-gradient(to right, #00ffea45, #002aff45);
     background-size: 400% 400%;
     .content {
-      padding: 20px 50px;
+      gap: 20px;
+      display: flex;
       min-width: 700px;
       min-height: 375px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
-      align-items: center;
+      padding: 20px 50px;
       border-radius: 20px;
+      align-items: center;
+      flex-direction: column;
+      background-size: cover;
+      justify-content: center;
       backdrop-filter: blur(5px);
-      background-color: rgba(255, 255, 255, 0.396);
       border: 0px rgba(255, 255, 255, 0.4) solid;
-      border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
+      background-color: rgba(255, 255, 255, 0.396);
       border-right: 0px rgba(40, 40, 40, 0.35) solid;
+      border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
       background-image: url("~/assets/svg/cool-background.svg");
       box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-      background-size: cover;
       h1 {
         font-size: 4rem;
         color: #0095ff;
-        // mix-blend-mode: difference;
         text-shadow: 2px 2px 0px #5c5c5c;
       }
       p {
@@ -98,8 +97,8 @@ const goToProject = (name) => {
       }
       a {
         color: #faeb19;
-        text-decoration: none;
         transition: all 0.5s;
+        text-decoration: none;
         mix-blend-mode: difference;
         text-shadow: 2px 2px 0px #5c5c5c;
         &:hover {
@@ -108,8 +107,8 @@ const goToProject = (name) => {
         }
       }
       .btn-group {
-        display: flex;
         gap: 18px;
+        display: flex;
         button {
           border: none;
           color: white;
