@@ -2,23 +2,37 @@
   <div class="home">
     <Tree></Tree>
     <div class="content-wrapper">
-      <div class="content">
-        <h1>欢迎来到我的主页</h1>
-        <p>
-          <a
-            href="http://github.com/crispychcken999"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Github地址</a
-          >
-        </p>
-        <p>点击下列按钮跳转体验</p>
-        <div class="btn-group">
-          <button @click="goToProject('/vite-threejs/')">
-            ThreeJS Playgroud
-          </button>
-          <button @click="goToProject('/Simple-2048/')">Simple-2048</button>
-          <button @click="goToProject">TODO</button>
+      <div class="grid grid--effect-vega">
+        <div class="grid__item grid__item--c1">
+          <div class="stack">
+            <div class="stack__deco"></div>
+            <div class="stack__deco"></div>
+            <div class="stack__deco"></div>
+            <div class="stack__deco"></div>
+            <div class="stack__figure">
+              <div class="content">
+                <h1>欢迎来到我的主页</h1>
+                <p>
+                  <a
+                    href="http://github.com/crispychicken999"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Github地址</a
+                  >
+                </p>
+                <p>点击下列按钮跳转体验</p>
+                <div class="btn-group">
+                  <button @click="goToProject('/vite-threejs/')">
+                    ThreeJS Playgroud
+                  </button>
+                  <button @click="goToProject('/Simple-2048/')">
+                    Simple-2048
+                  </button>
+                  <button @click="goToProject">TODO</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -26,6 +40,7 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
 useHead({
   title: "欢迎来到我的主页",
   meta: [
@@ -39,6 +54,7 @@ useHead({
     },
   ],
 });
+
 const baseURL = "https://crispyChicken999.github.io";
 
 // 跳转至项目
@@ -46,6 +62,16 @@ const goToProject = (name) => {
   if (!name) return;
   window.location.href = baseURL + name;
 };
+
+const animate = (dom) => {
+  const ELEMENT = document.querySelector(dom);
+  const { $VegaFx } = useNuxtApp();
+  new $VegaFx(ELEMENT)._in();
+};
+
+onMounted(() => {
+  animate(".grid__item");
+});
 </script>
 
 <style lang="scss" scoped>
@@ -73,15 +99,10 @@ const goToProject = (name) => {
       flex-direction: column;
       background-size: cover;
       justify-content: center;
-      backdrop-filter: blur(5px);
-      border: 0px rgba(255, 255, 255, 0.4) solid;
-      background-color: rgba(255, 255, 255, 0.396);
-      border-right: 0px rgba(40, 40, 40, 0.35) solid;
-      border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
+      background-color: rgb(255, 255, 255);
       background-image: url("~/assets/svg/cool-background.svg");
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      background-size: 100%;
+      font-family: "微软雅黑";
       h1 {
         font-size: 4rem;
         color: #0095ff;
@@ -92,7 +113,7 @@ const goToProject = (name) => {
         margin-bottom: 1rem;
         &:last-of-type {
           color: #999;
-        mix-blend-mode: difference;
+          mix-blend-mode: difference;
         }
       }
       a {
